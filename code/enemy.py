@@ -1,9 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from code.Const import ENTITY_SPEED, WIN_WIDTH, ENTITY_SHOT_DELAY
+from code.Const import ENTITY_SPEED, ENTITY_SHOT_DELAY
 from code.enemyShot import enemyShot
 from code.entity import Entity
-from code.playerShot import playerShot
 
 
 class Enemy(Entity):
@@ -19,3 +18,4 @@ class Enemy(Entity):
         if self.shot_delay == 0:
             self.shot_delay = ENTITY_SHOT_DELAY[self.name]
             return enemyShot(name=f'{self.name}Shot', position=(self.rect.centerx, self.rect.centery))
+        return None
